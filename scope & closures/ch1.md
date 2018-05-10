@@ -1,7 +1,7 @@
 # You Don't Know JS: Scope & Closures
 # Chapter 1: What is Scope?
 
-One of the most fundamental paradigms of nearly all programming languages is the ability to store values in variables, and later retrieve or modify those values. In fact, the ability to store values and pull values out of variables is what gives a program *state*.
+One of the most fundamental paradigms of nearly all programming languages is the ability to store values in variables, and later retrieve【回收】 or modify 【修改】those values. In fact, the ability to store values and pull values out of variables is what gives a program *state*.
 
 Without such a concept, a program could perform some tasks, but they would be extremely limited and not terribly interesting.
 
@@ -11,7 +11,7 @@ These questions speak to the need for a well-defined set of rules for storing va
 
 But, where and how do these *Scope* rules get set?
 
-## Compiler Theory
+## Compiler Theory 【编译原理】
 
 It may be self-evident, or it may be surprising, depending on your level of interaction with various languages, but despite the fact that JavaScript falls under the general category of "dynamic" or "interpreted" languages, it is in fact a compiled language. It is *not* compiled well in advance, as are many traditionally-compiled languages, nor are the results of compilation portable among various distributed systems.
 
@@ -19,7 +19,7 @@ But, nevertheless, the JavaScript engine performs many of the same steps, albeit
 
 In a traditional compiled-language process, a chunk of source code, your program, will undergo typically three steps *before* it is executed, roughly called "compilation":
 
-1. **Tokenizing/Lexing:** breaking up a string of characters into meaningful (to the language) chunks, called tokens. For instance, consider the program: `var a = 2;`. This program would likely be broken up into the following tokens: `var`, `a`, `=`, `2`, and `;`. Whitespace may or may not be persisted as a token, depending on whether it's meaningful or not.
+1. **Tokenizing/Lexing: 【词法分析】** breaking up a string of characters into meaningful (to the language) chunks, called tokens. For instance, consider the program: `var a = 2;`. This program would likely be broken up into the following tokens: `var`, `a`, `=`, `2`, and `;`. Whitespace may or may not be persisted as a token, depending on whether it's meaningful or not.
 
     **Note:** The difference between tokenizing and lexing is subtle and academic, but it centers on whether or not these tokens are identified in a *stateless* or *stateful* way. Put simply, if the tokenizer were to invoke stateful parsing rules to figure out whether `a` should be considered a distinct token or just part of another token, *that* would be **lexing**.
 
